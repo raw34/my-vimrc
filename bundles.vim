@@ -11,75 +11,78 @@ endif
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Bundle 'git@github.com:gmarik/vundle.git'
 
 "------------------
 " Code Completions
 "------------------
-Bundle 'mattn/emmet-vim'
-Bundle 'Raimondi/delimitMate'
+Bundle 'git@github.com:mattn/emmet-vim.git'
+Bundle 'git@github.com:Raimondi/delimitMate.git'
+" Bundle 'git@github.com:Valloric/YouCompleteMe.git'
+" Bundle 'git@github.com:Shougo/neocomplete.git'
+Bundle 'git@github.com:Shougo/neocomplcache.git'
 " snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Bundle 'git@github.com:SirVer/ultisnips.git'
+Bundle 'git@github.com:honza/vim-snippets.git'
 
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'edsono/vim-matchit'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'git@github.com:edsono/vim-matchit.git'
+Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
 
 "--------------
 " Fast editing
 "--------------
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'sjl/gundo.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'git@github.com:tpope/vim-surround.git'
+Bundle 'git@github.com:scrooloose/nerdcommenter.git'
+Bundle 'git@github.com:sjl/gundo.vim.git'
+Bundle 'git@github.com:godlygeek/tabular.git'
+Bundle 'git@github.com:nathanaelkane/vim-indent-guides.git'
 
 "--------------
 " IDE features
 "--------------
-Bundle 'scrooloose/nerdtree'
-Bundle 'humiaozuzu/TabBar'
-Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'joonty/vdebug'
-Bundle 'bling/vim-airline'
+Bundle 'git@github.com:scrooloose/nerdtree.git'
+Bundle 'git@github.com:humiaozuzu/TabBar.git'
+Bundle 'git@github.com:majutsushi/tagbar.git'
+Bundle 'git@github.com:mileszs/ack.vim.git'
+Bundle 'git@github.com:kien/ctrlp.vim.git'
+Bundle 'git@github.com:tpope/vim-fugitive.git'
+Bundle 'git@github.com:scrooloose/syntastic.git'
+Bundle 'git@github.com:bronson/vim-trailing-whitespace.git'
+Bundle 'git@github.com:joonty/vdebug.git'
+Bundle 'git@github.com:bling/vim-airline.git'
 
 "-------------
 " Other Utils
 "-------------
-"Bundle 'kakkyz81/evervim'
-Bundle 'raw34/evervim'
+"Bundle 'git@github.com:kakkyz81/evervim.git'
+Bundle 'git@github.com:raw34/evervim.git'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
 "------- web backend ---------
-Bundle '2072/PHP-Indenting-for-VIm'
+Bundle 'git@github.com:2072/PHP-Indenting-for-VIm.git'
 
 "------- web frontend ----------
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nono/jquery.vim'
-Bundle 'groenewege/vim-less'
+Bundle 'git@github.com:othree/html5.vim.git'
+Bundle 'git@github.com:pangloss/vim-javascript.git'
+Bundle 'git@github.com:kchmck/vim-coffee-script.git'
+Bundle 'git@github.com:nono/jquery.vim.git'
+Bundle 'git@github.com:groenewege/vim-less.git'
 
 "------- markup language -------
-Bundle 'tpope/vim-markdown'
+Bundle 'git@github.com:tpope/vim-markdown.git'
 
 "------- FPs ------
-Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'git@github.com:kien/rainbow_parentheses.vim.git'
 
 "--------------
 " Color Schemes
 "--------------
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
+Bundle 'git@github.com:altercation/vim-colors-solarized.git'
+Bundle 'git@github.com:tomasr/molokai.git'
 
 filetype plugin indent on     " required!
