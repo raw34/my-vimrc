@@ -228,9 +228,9 @@ let g:vdebug_options = {
 \    "debug_file" : "",
 \    "path_maps" : {},
 \    "watch_window_style" : 'expanded',
-\    "marker_default" : '⬦',
-\    "marker_closed_tree" : '▸',
-\    "marker_open_tree" : '▾',
+\    "marker_default" : '',
+\    "marker_closed_tree" : '',
+\    "marker_open_tree" : '',
 \    "continuous_mode"  : 0
 \}
 
