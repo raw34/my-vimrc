@@ -19,8 +19,8 @@ Bundle 'git@github.com:gmarik/vundle.git'
 Bundle 'git@github.com:mattn/emmet-vim.git'
 Bundle 'git@github.com:Raimondi/delimitMate.git'
 " Bundle 'git@github.com:Valloric/YouCompleteMe.git'
-" Bundle 'git@github.com:Shougo/neocomplete.git'
 Bundle 'git@github.com:Shougo/neocomplcache.git'
+Bundle 'git@github.com:ervandew/supertab.git'
 " snippets
 Bundle 'git@github.com:SirVer/ultisnips.git'
 Bundle 'git@github.com:honza/vim-snippets.git'
@@ -69,7 +69,6 @@ Bundle 'git@github.com:2072/PHP-Indenting-for-VIm.git'
 "------- web frontend ----------
 Bundle 'git@github.com:othree/html5.vim.git'
 Bundle 'git@github.com:pangloss/vim-javascript.git'
-Bundle 'git@github.com:kchmck/vim-coffee-script.git'
 Bundle 'git@github.com:nono/jquery.vim.git'
 Bundle 'git@github.com:groenewege/vim-less.git'
 
@@ -77,7 +76,7 @@ Bundle 'git@github.com:groenewege/vim-less.git'
 Bundle 'git@github.com:tpope/vim-markdown.git'
 
 "------- FPs ------
-Bundle 'git@github.com:kien/rainbow_parentheses.vim.git'
+" Bundle 'git@github.com:kien/rainbow_parentheses.vim.git'
 
 "--------------
 " Color Schemes

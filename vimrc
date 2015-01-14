@@ -83,11 +83,11 @@ set expandtab       " expand tab to space
 "autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
 " syntax support
-" autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
-" " js
-" let g:html_indent_inctags = "html,body,head,tbody"
-" let g:html_indent_script1 = "inc"
-" let g:html_indent_style1 = "inc"
+autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
+" js
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 
 "-----------------
 " Plugin settings
@@ -112,7 +112,7 @@ set expandtab       " expand tab to space
     " \ ['red',         'firebrick3'],
     " \ ]
 " let g:rbpt_max = 16
-" autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+" autocmd Syntax * RainbowParenthesesToggle
 
 " tabbar
 let g:Tb_MaxSize = 2
@@ -164,7 +164,7 @@ let NERDCompactSexyComs=1
 let g:user_emmet_expandabbr_key='<C-j>'
 
 " powerline
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
@@ -189,10 +189,21 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType perl setlocal omnifunc=perlcomplete#Complete
 autocmd FileType php setlocal omnifunc=phpcomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
+
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
+
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
+let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'
@@ -200,27 +211,79 @@ let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabCrMapping=1
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
+" xdebug
+let g:vdebug_options = {
+\    "port" : 9001,
+\    "timeout" : 25,
+\    "server" : 'localhost',
+\    "on_close" : 'detach',
+\    "break_on_open" : 1,
+\    "ide_key" : '',
+\    "debug_window_level" : 0,
+\    "debug_file_level" : 0,
+\    "debug_file" : "",
+\    "path_maps" : {},
+\    "watch_window_style" : 'expanded',
+\    "marker_default" : '⬦',
+\    "marker_closed_tree" : '▸',
+\    "marker_open_tree" : '▾',
+\    "continuous_mode"  : 0
+\}
+
+
+" set cscope.files
+if(has('win32'))
+    silent! execute "!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files"
+else
+    silent! execute "!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.py' -o -name '*.pm' -o -name '*.pl' -o -name '*.php' -o -name '*.js' > cscope.files"
+endif
+
+" ctags
+if(executable("ctags") && has("ctags"))
+    silent! execute "!ctags -R --fields=+aimS --languages=cpp -L cscope.files"
+    silent! execute "!ctags -R --fields=+aimS --languages=java -L cscope.files"
+    silent! execute "!ctags -R --fields=+aimS --languages=python -L cscope.files"
+    silent! execute "!ctags -R --fields=+aimS --languages=perl -L cscope.files"
+    silent! execute "!ctags -R --fields=+aimS --languages=php -L cscope.files"
+    silent! execute "!ctags -R --fields=+aimS --languages=javascript -L cscope.files"
+endif
+
+" cscope
+if(executable("cscope") && has("cscope"))
+    "set csprg=/usr/local/bin/cscope
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    set csto=0
+    set cst
+    set csverb
+
+    silent! execute '!cscope -Rbq'
+
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+endif
+
+" evervim
+let g:evervim_host='app.yinxiang.com'
+let g:evervim_devtoken='S=s37:U=72b2db:E=151d9d29814:C=14a82216ba0:P=1cd:A=en-devtoken:V=2:H=0f90f09e6419494bccaeae3e6df511ba'
+"let g:evervim_host='www.evernote.com'
+"let g:evervim_devtoken='S=s502:U=57a197b:E=151d2cd6946:C=14a7b1c3998:P=1cd:A=en-devtoken:V=2:H=55894c10fbb416a1152e895405008f58'
+
 " Keybindings for plugin toggle
-" nnoremap <F2> :set invpaste paste?<CR>
-" set pastetoggle=<F2>
-" nmap <F5> :TagbarToggle<cr>
-" nmap <F6> :NERDTreeToggle<cr>
+nmap <F1> :NERDTreeToggle<cr>
 " nmap <F3> :GundoToggle<cr>
 " nmap <F4> :IndentGuidesToggle<cr>
-nmap  <D-/> :
-nmap <F1> :NERDTreeToggle<cr>
 nmap <F8> :TagbarToggle<cr>
+nmap <D-/> :
 nnoremap <leader>a :Ack
-nnoremap <leader>v V`]
 
 "------------------
 " Useful Functions
@@ -291,66 +354,3 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
-
-
-" for xdebug
-let g:vdebug_options = {
-\    "port" : 9001,
-\    "timeout" : 25,
-\    "server" : 'localhost',
-\    "on_close" : 'detach',
-\    "break_on_open" : 1,
-\    "ide_key" : '',
-\    "debug_window_level" : 0,
-\    "debug_file_level" : 0,
-\    "debug_file" : "",
-\    "path_maps" : {},
-\    "watch_window_style" : 'expanded',
-\    "marker_default" : '⬦',
-\    "marker_closed_tree" : '▸',
-\    "marker_open_tree" : '▾',
-\    "continuous_mode"  : 0
-\}
-
-
-" set cscope.files
-if(has('win32'))
-    silent! execute "!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files"
-else
-    silent! execute "!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.py' -o -name '*.pm' -o -name '*.pl' -o -name '*.php' -o -name '*.js' > cscope.files"
-endif
-
-" for ctags
-if(executable("ctags") && has("ctags"))
-    silent! execute "!ctags -R --fields=+aimS --languages=cpp -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=java -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=python -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=perl -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=php -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=javascript -L cscope.files"
-endif
-
-" for cscope
-if(executable("cscope") && has("cscope"))
-    "set csprg=/usr/local/bin/cscope
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-    set csto=0
-    set cst
-    set csverb
-
-    silent! execute '!cscope -Rbq'
-
-    " add any database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out
-    " else add database pointed to by environment
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
-    endif
-endif
-
-" for evervim
-let g:evervim_host='app.yinxiang.com'
-let g:evervim_devtoken='S=s37:U=72b2db:E=151d9d29814:C=14a82216ba0:P=1cd:A=en-devtoken:V=2:H=0f90f09e6419494bccaeae3e6df511ba'
-"let g:evervim_host='www.evernote.com'
-"let g:evervim_devtoken='S=s502:U=57a197b:E=151d2cd6946:C=14a7b1c3998:P=1cd:A=en-devtoken:V=2:H=55894c10fbb416a1152e895405008f58'
