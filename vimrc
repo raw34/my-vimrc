@@ -114,6 +114,15 @@ let g:html_indent_style1 = "inc"
 " let g:rbpt_max = 16
 " autocmd Syntax * RainbowParenthesesToggle
 
+" niji
+let g:niji_matching_filetypes = ['lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'html']
+let g:niji_matching_characters = [
+    \ ['(', ')'],
+    \ ['\[', '\]'],
+    \ ['{', '}'],
+    \ ['<', '>']
+    \ ]
+
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1

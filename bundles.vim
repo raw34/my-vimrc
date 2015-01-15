@@ -77,6 +77,7 @@ Bundle 'tpope/vim-markdown'
 
 "------- FPs ------
 " Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'amdt/vim-niji'
 
 "--------------
 " Color Schemes
