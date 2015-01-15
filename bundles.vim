@@ -24,6 +24,7 @@ Bundle 'ervandew/supertab'
 " snippets
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+Bundle 'markwu/vim-laravel4-snippets'
 
 "-----------------
 " Fast navigation

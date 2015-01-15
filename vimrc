@@ -82,6 +82,7 @@ set expandtab       " expand tab to space
 "autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
+
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
 " js
@@ -213,6 +214,9 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" laravel4-snippets
+autocmd FileType php set ft=php.laravel
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'
