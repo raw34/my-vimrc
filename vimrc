@@ -116,7 +116,7 @@ let g:html_indent_style1 = "inc"
 " autocmd Syntax * RainbowParenthesesToggle
 
 " niji
-let g:niji_matching_filetypes = ['lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'html']
+let g:niji_matching_filetypes = ['lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'html', 'php.laravel']
 let g:niji_matching_characters = [
     \ ['(', ')'],
     \ ['\[', '\]'],
