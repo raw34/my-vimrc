@@ -66,6 +66,7 @@ Bundle 'raw34/evervim'
 "----------------------------------------
 "------- web backend ---------
 Bundle '2072/PHP-Indenting-for-VIm'
+" Bundle 'xsbeats/vim-blade'
 
 "------- web frontend ----------
 Bundle 'othree/html5.vim'
@@ -75,6 +76,7 @@ Bundle 'groenewege/vim-less'
 
 "------- markup language -------
 Bundle 'tpope/vim-markdown'
+" Bundle 'gabrielelana/vim-markdown'
 
 "------- FPs ------
 " Bundle 'kien/rainbow_parentheses.vim'
