@@ -249,7 +249,7 @@ let g:vdebug_options = {
 
 
 " set cscope.files
-if(has('win32'))
+if g:isWIN
     silent! execute "!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files"
 else
     silent! execute "!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.py' -o -name '*.pm' -o -name '*.pl' -o -name '*.php' -o -name '*.js' > cscope.files"
