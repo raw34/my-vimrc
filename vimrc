@@ -345,6 +345,7 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 :command -nargs=1 Vres vertical resize <args>
+:command Cphp silent! execute '!ctags -R --fields=+aimS --languages=php'
 
 " for macvim
 if has("gui_running")
