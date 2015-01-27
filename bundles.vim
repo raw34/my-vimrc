@@ -19,7 +19,7 @@ Bundle 'gmarik/vundle'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 " Bundle 'Valloric/YouCompleteMe'
-Bundle 'Shougo/vimproc.vim'
+" Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'ervandew/supertab'
 " snippets
@@ -67,7 +67,7 @@ Bundle 'raw34/evervim'
 "----------------------------------------
 "------- web backend ---------
 Bundle '2072/PHP-Indenting-for-VIm'
-Bundle 'm2mdas/phpcomplete-extended'
+" Bundle 'm2mdas/phpcomplete-extended'
 " Bundle 'xsbeats/vim-blade'
 
 "------- web frontend ----------

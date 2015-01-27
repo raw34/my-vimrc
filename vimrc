@@ -211,8 +211,8 @@ let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " phpcomplete-extended
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:phpcomplete_index_composer_command="composer"
+" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+" let g:phpcomplete_index_composer_command="composer"
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -224,8 +224,8 @@ autocmd FileType php set ft=php.laravel
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
-"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+" let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabCrMapping=1
 
