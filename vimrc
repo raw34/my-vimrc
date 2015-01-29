@@ -93,28 +93,6 @@ let g:html_indent_style1 = "inc"
 "-----------------
 " Plugin settings
 "-----------------
-" Rainbow parentheses for Lisp and variants
-" let g:rbpt_colorpairs = [
-    " \ ['brown',       'RoyalBlue3'],
-    " \ ['Darkblue',    'SeaGreen3'],
-    " \ ['darkgray',    'DarkOrchid3'],
-    " \ ['darkgreen',   'firebrick3'],
-    " \ ['darkcyan',    'RoyalBlue3'],
-    " \ ['darkred',     'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['brown',       'firebrick3'],
-    " \ ['gray',        'RoyalBlue3'],
-    " \ ['black',       'SeaGreen3'],
-    " \ ['darkmagenta', 'DarkOrchid3'],
-    " \ ['Darkblue',    'firebrick3'],
-    " \ ['darkgreen',   'RoyalBlue3'],
-    " \ ['darkcyan',    'SeaGreen3'],
-    " \ ['darkred',     'DarkOrchid3'],
-    " \ ['red',         'firebrick3'],
-    " \ ]
-" let g:rbpt_max = 16
-" autocmd Syntax * RainbowParenthesesToggle
-
 " niji
 let g:niji_matching_filetypes = ['lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'html', 'php.laravel']
 let g:niji_matching_characters = [
@@ -172,9 +150,6 @@ let NERDCompactSexyComs=1
 
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
-
-" powerline
-let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
