@@ -254,21 +254,32 @@ let g:vdebug_options = {
 
 
 " set cscope.files
-if g:isWIN
-    silent! execute "!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files"
-else
-    silent! execute "!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' -o -name '*.java' -o -name '*.py' -o -name '*.pm' -o -name '*.pl' -o -name '*.php' -o -name '*.js' > cscope.files"
-endif
+function SetCscopeFiles ()
+    if g:isWIN
+        silent! execute '!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files'
+    else
+        silent! execute '!find . -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" -o -name "*.py" -o -name "*.pm" -o -name "*.pl" -o -name "*.php" -o -name "*.js" > cscope.files'
+    endif
 
-" ctags
-if(executable("ctags") && has("ctags"))
-    silent! execute "!ctags -R --fields=+aimS --languages=cpp -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=java -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=python -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=perl -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=php -L cscope.files"
-    silent! execute "!ctags -R --fields=+aimS --languages=javascript -L cscope.files"
-endif
+    silent! execute '!cscope -Rbq'
+endfunction
+
+" set ctags file
+function SetCtagsFile ()
+    if(executable("ctags"))
+        " silent! execute '!ctags -R --fields=+aimS --languages=cpp -L cscope.files'
+        " silent! execute '!ctags -R --fields=+aimS --languages=java -L cscope.files'
+        " silent! execute '!ctags -R --fields=+aimS --languages=python -L cscope.files'
+        " silent! execute '!ctags -R --fields=+aimS --languages=perl -L cscope.files'
+        " silent! execute '!ctags -R --fields=+aimS --languages=php -L cscope.files'
+        " silent! execute '!ctags -R --fields=+aimS --languages=javascript -L cscope.files'
+        if filereadable("cscope.out")
+            silent! execute '!ctags -R --fields=+aimS -L cscope.files'
+        else
+            silent! execute '!ctags -R --fields=+aimS'
+        endif
+    endif
+endfunction
 
 " cscope
 if(executable("cscope") && has("cscope"))
@@ -277,8 +288,6 @@ if(executable("cscope") && has("cscope"))
     set csto=0
     set cst
     set csverb
-
-    silent! execute '!cscope -Rbq'
 
     " add any database in current directory
     if filereadable("cscope.out")
@@ -350,7 +359,8 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 :command -nargs=1 Vres vertical resize <args>
-:command Cphp silent! execute '!ctags -R --fields=+aimS --languages=php'
+:command CscopeFile call SetCscopeFiles() | cs add cscope.out
+:command CtagsFile call SetCtagsFile() | set tags=tags
 
 " for macvim
 if has("gui_running")
