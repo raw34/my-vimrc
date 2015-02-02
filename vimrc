@@ -311,6 +311,13 @@ cmap w!! %!sudo tee >/dev/null %
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Quickly open bundle directory
+if g:isWIN
+    nmap <silent> <leader>eb :e $HOME/vimfiles/bundle<CR>
+else
+    nmap <silent> <leader>eb :e $HOME/.vim/bundle<CR>
+endif
+
 " sublime key bindings
 nmap <D-]> >>
 nmap <D-[> <<
