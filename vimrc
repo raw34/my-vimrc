@@ -313,7 +313,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Quickly open bundle directory
 if g:isWIN
-    nmap <silent> <leader>eb :e $HOME/vimfiles/bundle<CR>
+    nmap <silent> <leader>eb :e $VIM/vimfiles/bundle<CR>
 else
     nmap <silent> <leader>eb :e $HOME/.vim/bundle<CR>
 endif
