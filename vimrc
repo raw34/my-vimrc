@@ -258,7 +258,7 @@ endfunction
 
 " cscope
 if(executable("cscope") && has("cscope"))
-    "set csprg=/usr/local/bin/cscope
+    " set csprg=/usr/local/bin/cscope
     set cscopequickfix=s-,c-,d-,i-,t-,e-
     set csto=0
     set cst
@@ -341,7 +341,7 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 :command -nargs=1 Vres vertical resize <args>
-:command CscopeFile call SetCscopeFiles() | cs add cscope.out
+:command CscopeFile call SetCscopeFiles() | cs reset
 :command CtagsFile call SetCtagsFile() | set tags=tags
 
 " for macvim
