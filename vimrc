@@ -99,7 +99,6 @@ let g:niji_matching_characters = [
     \ ['(', ')'],
     \ ['\[', '\]'],
     \ ['{', '}'],
-    \ ['<', '>']
     \ ]
 
 " tabbar
