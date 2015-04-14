@@ -7,7 +7,7 @@ endif
 
 if g:isWIN
     source $VIM/vimfiles/bundles.vim
-    set guifont=Consolas:h11
+    set guifont=Consolas:h10
 else
     source ~/.vim/bundles.vim
     set guifont=Consolas\ 11
