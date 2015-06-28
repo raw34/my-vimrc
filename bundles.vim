@@ -20,7 +20,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 " snippets
 Bundle 'SirVer/ultisnips'
