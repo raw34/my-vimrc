@@ -1,6 +1,5 @@
 # my-vimrc
 
-
 ## Installation
 
 1. Backup your old vim configuration files:
@@ -28,9 +27,9 @@
     // Linux/OSX  
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle  
 
-    // Windows
+    // Windows  
     git clone https://github.com/gmarik/vundle.git yourvimdirectory/vimfiles/bundle/vundle
 
 4. Install bundles. Launch vim(ignore the errors and they will disappear after installing needed plugins)and run:
 
-    :BundleInstall
+    :BundleInstall  
