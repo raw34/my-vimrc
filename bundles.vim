@@ -16,7 +16,9 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
+"zencoding升级版
 Bundle 'mattn/emmet-vim'
+"自动补全括号
 Bundle 'Raimondi/delimitMate'
 " Bundle 'Valloric/YouCompleteMe'
 " Bundle 'Shougo/vimproc.vim'

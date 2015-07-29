@@ -330,6 +330,8 @@ vmap <leader>c "+y
 imap <leader>v <ESC>"+p
 nmap <leader>v "+p
 vmap <leader>v "+p
+" \cls
+nmap <leader>cls :%s/^\s\+$//g<CR>
 
 " eggcache vim
 nnoremap ; :
