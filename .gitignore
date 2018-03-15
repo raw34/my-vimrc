@@ -1,5 +1,3 @@
-### /Users/maple/.gitignore-boilerplates/Global/OSX.gitignore
-
 .DS_Store
 Icon
 
@@ -10,10 +8,7 @@ Icon
 .Spotlight-V100
 .Trashes
 
-
-### /Users/maple/.gitignore-boilerplates/Global/vim.gitignore
-
-.*.sw[a-z]
+*.sw[a-z]
 *.un~
 Session.vim
 .netrwhist

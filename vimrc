@@ -334,6 +334,8 @@ vmap <leader>v "+p
 nmap <leader>cle :%s/\s\+$//g<CR>
 " \cls
 nmap <leader>cls :%s/^\s\+$//g<CR>
+" \cln
+nmap <leader>cln :g/^\s*$/d<CR>
 
 " eggcache vim
 nnoremap ; :
