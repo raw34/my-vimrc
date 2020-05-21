@@ -101,37 +101,8 @@ let g:niji_matching_characters = [
     \ ['{', '}'],
     \ ]
 
-" tabbar
-let g:Tb_MaxSize = 2
-let g:Tb_TabWrap = 1
-
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
-
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
-
-" Tagbar
-let g:tagbar_left=1
-let g:tagbar_width=30
-let g:tagbar_autofocus = 1
-let g:tagbar_sort = 0
-let g:tagbar_compact = 1
-
-" tag for php
-" if executable('phptags')
-    " let g:tagbar_type_puppet = {
-        " \ 'ctagstype': 'puppet',
-        " \ 'kinds': [
-            " \'c:class',
-            " \'s:site',
-            " \'n:node',
-            " \'d:definition'
-          " \]
-        " \}
-" endif
 
 " Nerd Tree
 let NERDChristmasTree=0
@@ -184,17 +155,10 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-" phpcomplete-extended
-" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-" let g:phpcomplete_index_composer_command="composer"
-
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" laravel4-snippets
-autocmd FileType php set ft=php.laravel
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'
@@ -206,77 +170,6 @@ let g:SuperTabCrMapping=1
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-
-" xdebug
-let g:vdebug_options = {
-\    "port" : 9001,
-\    "timeout" : 25,
-\    "server" : 'localhost',
-\    "on_close" : 'detach',
-\    "break_on_open" : 1,
-\    "ide_key" : '',
-\    "debug_window_level" : 0,
-\    "debug_file_level" : 0,
-\    "debug_file" : "",
-\    "path_maps" : {},
-\    "watch_window_style" : 'expanded',
-\    "marker_default" : '',
-\    "marker_closed_tree" : '',
-\    "marker_open_tree" : '',
-\    "continuous_mode"  : 0
-\}
-
-
-" set cscope.files
-function SetCscopeFiles ()
-    if g:isWIN
-        silent! execute '!dir /b *.h,*.c,*.cpp,*.java,*.py,*.pm,*.pl,*.php,*.js >> cscope.files'
-    else
-        silent! execute '!find . -name "*.h" -o -name "*.c" -o -name "*.cpp" -o -name "*.java" -o -name "*.py" -o -name "*.pm" -o -name "*.pl" -o -name "*.php" -o -name "*.js" > cscope.files'
-    endif
-
-    silent! execute '!cscope -Rbq'
-endfunction
-
-" set ctags file
-function SetCtagsFile ()
-    if(executable("ctags"))
-        " silent! execute '!ctags -R --fields=+aimS --languages=cpp -L cscope.files'
-        " silent! execute '!ctags -R --fields=+aimS --languages=java -L cscope.files'
-        " silent! execute '!ctags -R --fields=+aimS --languages=python -L cscope.files'
-        " silent! execute '!ctags -R --fields=+aimS --languages=perl -L cscope.files'
-        " silent! execute '!ctags -R --fields=+aimS --languages=php -L cscope.files'
-        " silent! execute '!ctags -R --fields=+aimS --languages=javascript -L cscope.files'
-        if filereadable("cscope.out")
-            silent! execute '!ctags -R --fields=+aimS -L cscope.files'
-        else
-            silent! execute '!ctags -R --fields=+aimS'
-        endif
-    endif
-endfunction
-
-" cscope
-if(executable("cscope") && has("cscope"))
-    " set csprg=/usr/local/bin/cscope
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-    set csto=0
-    set cst
-    set csverb
-
-    " add any database in current directory
-    if filereadable("cscope.out")
-        cs add cscope.out
-    " else add database pointed to by environment
-    elseif $CSCOPE_DB != ""
-        cs add $CSCOPE_DB
-    endif
-endif
-
-" evervim
-let g:evervim_host='app.yinxiang.com'
-let g:evervim_devtoken='S=s37:U=72b2db:E=151d9d29814:C=14a82216ba0:P=1cd:A=en-devtoken:V=2:H=0f90f09e6419494bccaeae3e6df511ba'
-"let g:evervim_host='www.evernote.com'
-"let g:evervim_devtoken='S=s502:U=57a197b:E=151d2cd6946:C=14a7b1c3998:P=1cd:A=en-devtoken:V=2:H=55894c10fbb416a1152e895405008f58'
 
 " Keybindings for plugin toggle
 nmap <F1> :NERDTreeToggle<cr>

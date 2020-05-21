@@ -16,18 +16,10 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
-"zencoding升级版
-Bundle 'mattn/emmet-vim'
+" Supertab
+Bundle 'ervandew/supertab'
 "自动补全括号
 Bundle 'Raimondi/delimitMate'
-" Bundle 'Valloric/YouCompleteMe'
-" Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'ervandew/supertab'
-" snippets
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'markwu/vim-laravel4-snippets'
 
 "-----------------
 " Fast navigation
@@ -44,6 +36,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "快速注释
 Bundle 'scrooloose/nerdcommenter'
+"vim撤销树
 Bundle 'sjl/gundo.vim'
 "自动对齐
 Bundle 'godlygeek/tabular'
@@ -55,10 +48,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 "目录树
 Bundle 'scrooloose/nerdtree'
-"导航栏
-Bundle 'humiaozuzu/TabBar'
-"标签栏
-Bundle 'majutsushi/tagbar'
+"查找替换
 Bundle 'mileszs/ack.vim'
 "查找文件
 Bundle 'kien/ctrlp.vim'
@@ -76,31 +66,7 @@ Bundle 'bling/vim-airline'
 "-------------
 " Other Utils
 "-------------
-"evernote插件
-"Bundle 'kakkyz81/evervim'
-Bundle 'raw34/evervim'
-
-"----------------------------------------
-" Syntax/Indent for language enhancement
-"----------------------------------------
-"------- web backend ---------
-"php语法
-Bundle '2072/PHP-Indenting-for-VIm'
-" Bundle 'm2mdas/phpcomplete-extended'
-" Bundle 'xsbeats/vim-blade'
-
-"------- web frontend ----------
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nono/jquery.vim'
-Bundle 'groenewege/vim-less'
-
-"------- markup language -------
-Bundle 'tpope/vim-markdown'
-" Bundle 'gabrielelana/vim-markdown'
-
-"------- FPs ------
-" Bundle 'kien/rainbow_parentheses.vim'
+"彩虹括号
 Bundle 'raymond-w-ko/vim-niji'
 
 "--------------
