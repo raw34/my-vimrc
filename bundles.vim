@@ -33,7 +33,7 @@ Bundle 'markwu/vim-laravel4-snippets'
 " Fast navigation
 "-----------------
 "括号前后移动
-Bundle 'edsono/vim-matchit'
+Bundle 'adelarsq/vim-matchit'
 "当前文件搜索
 Bundle 'Lokaltog/vim-easymotion'
 
@@ -101,8 +101,7 @@ Bundle 'tpope/vim-markdown'
 
 "------- FPs ------
 " Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'amdt/vim-niji'
-Bundle 'darvelo/vim-niji'
+Bundle 'raymond-w-ko/vim-niji'
 
 "--------------
 " Color Schemes
