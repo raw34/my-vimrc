@@ -58,8 +58,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 "空白符高亮
 Bundle 'bronson/vim-trailing-whitespace'
-"debug工具
-Bundle 'joonty/vdebug'
 "工具条
 Bundle 'bling/vim-airline'
 
