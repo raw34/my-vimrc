@@ -87,7 +87,7 @@ set expandtab       " expand tab to space
 " Plugin settings
 "-----------------
 " niji
-let g:niji_matching_filetypes = ['lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'html', 'php.laravel']
+let g:niji_matching_filetypes = ['html','lisp', 'ruby', 'python', 'perl', 'php', 'c', 'cpp', 'java', 'javascript', 'go']
 let g:niji_matching_characters = [
     \ ['(', ')'],
     \ ['\[', '\]'],
