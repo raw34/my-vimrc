@@ -13,10 +13,6 @@ else
     set guifont=Consolas\ 11
 endif
 
-" :AuthorInfoDetect
-let g:vimrc_author='raw34'
-let g:vimrc_email='raw0034@gmail.com'
-
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 
@@ -34,10 +30,10 @@ syntax on
 "color solarized
 colorscheme molokai
 
-" highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+" highlight current line (cursorcolumn dropped: unsupported by IdeaVim, keep config common to both)
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+set cursorline
 
 " search
 set incsearch
@@ -47,7 +43,6 @@ set smartcase
 
 " editor settings
 set history=1000
-set nocompatible
 set nofoldenable                                                  " disable folding
 set confirm                                                       " prompt when existing from an unsaved file
 set backspace=indent,eol,start                                    " More powerful backspacing
@@ -62,26 +57,17 @@ set showcmd                                                       " show typed c
 set title                                                         " show file in titlebar
 set laststatus=2                                                  " use 2 lines for the status bar
 set matchtime=2                                                   " show matching bracket for 0.2 seconds
-set matchpairs+=<:>                                               " specially for html
+au FileType html setlocal matchpairs+=<:>                         " <:> pairing only for html
 set relativenumber                                                " show relativenumber
 
 " Default Indentation
 set autoindent
-set smartindent     " indent when
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
 " set textwidth=79
 " set smarttab
 set expandtab       " expand tab to space
-
-"autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-"autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-"autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-"autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-"autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-"autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
 
 "-----------------
 " Plugin settings
@@ -95,7 +81,7 @@ let g:niji_matching_characters = [
     \ ]
 
 " easy-motion
-let g:EasyMotion_leader_key = '<Leader>'
+map <Leader> <Plug>(easymotion-prefix)
 
 " Nerd Tree
 let NERDChristmasTree=0
@@ -112,7 +98,6 @@ let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 
 " SuperTab
-let g:SuperTabDefultCompletionType='context'
 " let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
@@ -122,12 +107,11 @@ let g:SuperTabCrMapping=1
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
+" ack.vim — use ripgrep (ack/ag not installed)
+let g:ackprg = 'rg --vimgrep'
+
 " Keybindings for plugin toggle
 nmap <F1> :NERDTreeToggle<cr>
-" nmap <F3> :GundoToggle<cr>
-" nmap <F4> :IndentGuidesToggle<cr>
-nmap <F8> :TagbarToggle<cr>
-nmap <D-/> :
 nnoremap <leader>a :Ack
 
 "------------------
@@ -190,8 +174,6 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 :command -nargs=1 Vres vertical resize <args>
-:command CscopeFile call SetCscopeFiles() | cs reset
-:command CtagsFile call SetCtagsFile() | set tags=tags
 
 " for macvim
 if has("gui_running")

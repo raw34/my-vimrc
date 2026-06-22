@@ -36,8 +36,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "快速注释
 Bundle 'scrooloose/nerdcommenter'
-"vim撤销树
-Bundle 'sjl/gundo.vim'
 "自动对齐
 Bundle 'godlygeek/tabular'
 "缩进深度，鼠标位置有十字定位
